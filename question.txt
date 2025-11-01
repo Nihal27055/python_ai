@@ -1,0 +1,155 @@
+
+Write & Read File
+Write a Python program that creates a file named hello.txt, writes the text "Hello, Python!" into it, and then reads the same content back and prints it.
+
+
+1. Anagram Finder
+
+Write a function find_anagrams(word_list) that takes a list of words and returns groups of words that are anagrams of each other.
+Example:
+Input → ["listen", "silent", "enlist", "hello", "below", "elbow"]
+Output → [['listen', 'silent', 'enlist'], ['below', 'elbow']]
+
+
+2. Word Frequency Counter
+
+Write a Python function that counts how many times each word appears in a paragraph.
+Ignore punctuation and case sensitivity.
+Bonus: Sort the output by frequency (highest first).
+
+
+3.Student Grade Analyzer
+Create a program that:
+Takes student names and marks for 5 subjects.
+Calculates average marks and assigns grades:
+
+A: 90+
+
+B: 75–89
+
+C: 50–74
+
+F: Below 50
+
+Displays class topper and subject-wise highest marks.
+
+4. Custom Sorting
+
+Given a list of names, sort them by length first, then alphabetically if lengths are equal.
+Example:
+Input → ["Zoe", "Alice", "Bob", "Eve", "Clara"]
+Output → ['Bob', 'Eve', 'Zoe', 'Alice', 'Clara']
+
+
+5. Bank Account Simulation
+
+Write a class BankAccount with:
+
+Attributes: owner, balance
+
+Methods:
+deposit(amount)
+withdraw(amount)
+
+show_balance()
+
+Ensure balance never goes below zero.
+Create multiple accounts and test transfers between them.
+bsm-hecw-hpu
+
+
+Easy----->
+1.Even or Odd Checker
+    Write a program that asks the user for a number and prints whether it is even or odd.
+
+2.Positive, Negative, or Zero
+    Write a program that asks the user for a number and prints whether it is positive, negative, or zero.
+
+3.List Sum Calculator
+    Write a program that creates a list of numbers and calculates the total sum using a loop.
+
+4.Largest Number in a List
+Write a program that takes a list of numbers and finds the largest number using a loop and conditionals.
+
+Intermediate------>
+5.Multiplication Table
+    Write a program that asks the user for a number and prints its multiplication table up to 10 using a loop.
+
+6.Vowel Counter
+    Write a program that asks the user for a word and counts how many vowels (a, e, i, o, u) it contains.
+
+7.Guess the Secret Number
+    Write a program that stores a secret number and asks the user to guess it.
+    Keep asking until the user guesses correctly.
+    
+8.Name Repeater
+    Write a program that asks the user for their name and prints it 5 times using a loop.
+
+Advanced-------->
+9.Reverse a Word
+    Write a program that asks the user for a word and prints the word in reverse order.
+
+10.Shopping Cart Program
+    Write a program with a list of fruits (e.g., ["apple", "banana", "mango", "orange"]).
+    Ask the user to enter a fruit name.
+    If it’s in the list → print "Available".
+    If it’s not in the list → print "Not Available".
+
+
+
+
+
+Read Line by Line
+Create a file named data.txt with some text (you can add it manually).
+Write a program that reads and prints each line one by one using a loop.
+
+Count Words in a File
+Write a Python program that reads a text file and counts the number of words in it.
+
+Append Text to File
+Write a program that appends "This is an appended line." to an existing file named notes.txt and then displays the full content.
+
+Count Lines
+Write a program to count how many lines are in a given file.    
+
+
+
+
+1.Write a Python program that reads the content of source.txt and writes it into a new file called copy.txt.
+
+2. Count Characters, Words, and Lines
+Task:
+Write a program that counts:
+Number of characters
+Number of words
+Number of lines
+in a file named data.txt.
+Concepts:
+File reading, splitting text, counting.
+
+3. Search for a Word in a File
+
+Task:
+Ask the user for a word and check if that word exists in notes.txt.
+Print how many times it appears.
+
+Concepts:
+Looping through lines, string search, count().
+
+4. Remove Blank Lines
+
+Task:
+Write a program that removes all empty lines from data.txt and saves the cleaned text into a new file named clean_data.txt.
+
+Concepts:
+Conditional writing, filtering.
+
+5.Write a program that reads a file and writes its content in reverse order (line by line) into another file.
+
+
+
+
+
+Write a Python program to divide two numbers entered by the user and handle any division by zero errors.
+
+Write a program that asks the user to input a number and prints its square root. Handle invalid or negative inputs properly.
