@@ -7,3 +7,5 @@ except IndexError :
     print("the index number not exisiting")
 except NameError :    
     print("name error")
+
+

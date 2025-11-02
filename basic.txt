@@ -1,692 +1,207 @@
-➡️ List
-
-🔹 Use:
- Definition: An ordered, changeable (mutable) collection.
- Allows duplicates.
- Elements are indexed.
-
-🔹 Example:
-
-fruits = ["apple", "banana", "cherry", "apple"]
-print(fruits)        
-print(fruits[1])
-
-➡️ Tuple
-
-🔹 Use:
- Definition: An ordered, unchangeable (immutable) collection.
- Allows duplicates.
- Useful for fixed data that should not change.
-
-🔹 Example:
-
-coordinates = (10, 20, 30, 10)
-print(coordinates)     # (10, 20, 30, 10)
-print(coordinates[0])
-
-➡️ Set
-
-🔹 Use:
- Definition: An unordered, unindexed collection.
- Does not allow duplicates.
- Mutable (you can add/remove items, but order is not guaranteed).
-
-🔹 Example:
-
-numbers = {1, 2, 3, 3, 4}
-print(numbers)     # {1, 2, 3, 4} (duplicates removed)
-numbers.add(5)
-print(numbers)
-
-➡️ Dictionary (dict)
-
-🔹 Use:
- Definition: A collection of key-value pairs.
- Keys must be unique, but values can repeat.
- Ordered (since Python 3.7+), mutable.
-
-🔹 Example:
-
-student = {
-    "name": "Alice",
-    "age": 21,
-    "course": "Python"
-}
-
-print(student["name"])   # Alice
-student["age"] = 22      # Updating value
-print(student)
-
-➡️ f-string
-
-🔹 Use:
- Used in Python (3.6+) to format strings easily by inserting variables or expressions inside { }.
-
-🔹 Example:
-
-name = "Legend"
-age = 15
-print(f"My name is {name} and I am {age} years old.")
-# Output: My name is Legend and I am 15 years old.
-
-x, y = 5, 3
-print(f"{x} + {y} = {x + y}")
-# Output: 5 + 3 = 8
-
-➡️ for loop
-
-🔹 Use:
- Used to repeat a block of code for each item in a sequence (like a list, string, or range of numbers).
-
-🔹 Example:
-
-for i in range(1, 6):
-    print(i)
-
-
-Output:
-1
-2
-3
-4
-5
-
-➡️ Double for loop (Nested loop)
-
-🔹 Use:
- Used when one loop is inside another. Helpful for tables, patterns, or 2D data.
-
-🔹 Example:
-
-user = int(input("Enter a num between 5 to 10 : "))
-for i in range(1, user + 1): 
-    for num in range(1, 11):
-        print(i, "*", num, "=", i * num)
-
-➡️ while loop
-
-🔹 Use:
- Repeats a block of code as long as a condition is True.
- Good when you don’t know in advance how many times you need to loop.
-
-🔹 Example:
-
-i = 1
-while i <= 5:
-    print(i)
-    i += 1
-
-
-Output:
-1
-2
-3
-4
-5
-
-➡️ while True
-
-🔹 Use:
- Creates an infinite loop that runs forever until stopped manually (or with break).
- Useful for menus, repeated inputs, or continuous programs.
-
-🔹 Example:
-
-num = 2
-while True:
-    guess = int(input("Enter your guess between 1 to 10 : "))
-    if guess == num:
-        print("Congratulations, your answer is correct!")
-        break
-    else:
-        print("Wrong answer, try again.")
-
-➡️ break
-
-🔹 Use:
- Stops the current loop immediately, even if the condition is still True.
- Works with both for and while loops.
-
-🔹 Example:
-
-num = 2
-while True:
-    guess = int(input("Enter your guess between 1 to 10 : "))
-    if guess == num:
-        print("Congratulations, your answer is correct!")
-        break
-    else:
-        print("Wrong answer, try again.")
-
-➡️ String Methods
-🔹 1. Uppercase & Lowercase
-
-Use: Convert text to uppercase or lowercase.
-
-word = "apple"
-print(word.upper())   # APPLE
-print(word.lower())   # apple
-
-🔹 2. Capitalize
-
-Use: Makes the first letter uppercase and the rest lowercase.
-
-word = "hello world"
-print(word.capitalize())  # Hello world
-
-🔹 3. Count
-
-Use: Counts how many times a substring appears.
-
-word = "banana"
-print(word.count("a"))  # 3
-
-🔹 4. Replace
-
-Use: Replaces part of a string with another.
-
-text = "I like apples"
-print(text.replace("apples", "mangoes"))
-# Output: I like mangoes
-
-🔹 5. Find
-
-Use: Returns the index of the first occurrence of a substring.
-
-text = "Python is fun"
-print(text.find("fun"))   # 10
-
-🔹 6. Split & Join
-
-Use: Split breaks a string into a list, join connects elements back into a string.
-
-sentence = "I love coding"
-words = sentence.split()      # ['I', 'love', 'coding']
-print(words)
-
-new_sentence = "-".join(words)
-print(new_sentence)           # I-love-coding
-
-🔹 7. Strip (remove spaces)
-
-Use: Removes spaces from the beginning and end of a string.
-
-name = "   Rahul   "
-print(name.strip())   # Rahul
-
-
-
-
-
-| Keyword    | Description                                               | Example                              |
-| ---------- | --------------------------------------------------------- | ------------------------------------ |
-| `False`    | Boolean value for falsehood.                              | `is_logged_in = False`               |
-| `True`     | Boolean value for truth.                                  | `is_active = True`                   |
-| `None`     | Represents the absence of a value.                        | `data = None`                        |
-| `and`      | Logical AND operator.                                     | `if x > 0 and y > 0:`                |
-| `or`       | Logical OR operator.                                      | `if x == 0 or y == 0:`               |
-| `not`      | Logical negation.                                         | `if not is_done:`                    |
-| `if`       | Conditional statement.                                    | `if x > 10:`                         |
-| `elif`     | Else if condition.                                        | `elif x == 10:`                      |
-| `else`     | Executes when previous `if` conditions fail.              | `else:`                              |
-| `for`      | Used for loops.                                           | `for i in range(5):`                 |
-| `while`    | Loop with condition.                                      | `while count < 10:`                  |
-| `break`    | Exits a loop.                                             | `if x == 5: break`                   |
-| `continue` | Skips to next iteration in loop.                          | `if x == 5: continue`                |
-| `pass`     | Does nothing (placeholder).                               | `def todo(): pass`                   |
-| `def`      | Defines a function.                                       | `def greet(): print("Hi")`           |
-| `return`   | Returns a value from a function.                          | `return name`                        |
-| `class`    | Defines a class.                                          | `class Person:`                      |
-| `from`     | Imports specific parts of a module.                       | `from math import sqrt`              |
-| `import`   | Imports a module.                                         | `import math`                        |
-| `as`       | Used to create an alias.                                  | `import math as m`                   |
-| `try`      | Starts a try-except block.                                | `try: x = 1/0`                       |
-| `except`   | Handles exceptions.                                       | `except ZeroDivisionError:`          |
-| `finally`  | Always executes, even after an exception.                 | `finally: print("Done")`             |
-| `raise`    | Raises an exception manually.                             | `raise ValueError("Invalid input")`  |
-| `assert`   | Tests a condition; raises error if false.                 | `assert x > 0, "x must be positive"` |
-| `lambda`   | Creates an anonymous function.                            | `square = lambda x: x*x`             |
-| `with`     | Context manager (auto setup/cleanup).                     | `with open('file.txt') as f:`        |
-| `yield`    | Returns a generator from a function.                      | `yield i`                            |
-| `del`      | Deletes an object.                                        | `del my_list[0]`                     |
-| `global`   | Declares a global variable.                               | `global count`                       |
-| `nonlocal` | Refers to a variable in the enclosing (non-global) scope. | `nonlocal x`                         |
-| `in`       | Checks membership.                                        | `if x in [1,2,3]:`                   |
-| `is`       | Tests object identity.                                    | `if a is b:`                         |
-| `None`
-
-
-
-
-🐍 1. Introduction to Python
-
-Python is a high-level, interpreted, and general-purpose programming language.
-That’s just fancy talk for saying:
-👉 It’s easy to read (like English),
-👉 It doesn’t need to be compiled before running,
-👉 You can use it for almost anything — apps, AI, games, data science, web, automation, and more.
-
-🔹 High-Level Language
-
-You don’t have to worry about things like memory or hardware.
-Python handles the behind-the-scenes stuff, so you can focus on logic and ideas.
-
-Example:
-
-print("Hello, Legend!")
-
-
-Boom — it prints. No setup drama. No semicolons war. 😎
-
-🔹 Interpreted Language
-
-Python runs line by line — like a teacher checking your homework sentence by sentence.
-
-If there’s an error, it stops right there and shows you what went wrong.
-That’s what this means:
-
-“Interpreted (no need for compilation) — line by line, error stops the code.”
-
-💡 Compiler languages (like C or Java) check the whole code at once before running.
-If there’s an error, they’ll tell you after scanning everything.
-
-🔹 Dynamically Typed
-
-You don’t have to tell Python what kind of data you’re using.
-It’s smart enough to figure it out.
-
-Example:
-
-a = 6       # Python knows it's an integer
-b = "Legend"  # Python knows it's a string
-
-
-Other languages (like C or Java) would require:
-
-int a = 6;
-string b = "Legend";
-
-
-Python? It just vibes and auto-detects. 🔍✨
-
-🔹 Multiple Programming Styles Supported
-
-Python lets you code in your own way.
-It supports:
-
-Object-Oriented Programming (OOP): using classes and objects
-
-Functional Programming: using functions like map(), filter()
-
-Procedural Programming: step-by-step instructions
-
-So whether you’re an artist or an engineer, Python adjusts to your style. 🎨⚙️
-
-🔹 Huge Standard Library
-
-Python comes loaded with ready-made tools — called modules.
-These are like plug-and-play power-ups.
-
-Example:
-
-import math
-import random
-import numpy
-
-
-You don’t have to write everything from scratch — just import and roll.
-That’s why it’s said:
-
-“Huge standard library. Example: import numpy”
-
-🔹 Portable
-
-Python works almost everywhere:
-
-Android
-
-Windows
-
-macOS
-
-Linux
-
-Write the code once — it runs anywhere (no rework needed).
-That’s why it’s called portable.
-
-💡 Compare with Other Languages
-Platform	Common Languages
-Android	Java, Kotlin
-Windows	C++, C, Python, Java
-
-Python joins this lineup because it’s flexible — it can blend into almost any environment.
-
-2. Basic Syntax
-🔹 Comments
-
-Used to add notes or explanations in your code.
-They’re ignored by Python — just for humans to read.
-
-# This is a single-line comment
-
-
-➡ Symbol: # (called hashtag or hash)
-➡ Shortcut: Ctrl + / to toggle comment on/off
-➡ Undo shortcut: Ctrl + Z
-
-🔹 Print Statement
-
-Used to display messages or output.
-
-print("Hello, World!")
-
-
-✅ Python automatically moves to a new line after printing.
-
-🔹 Variables
-
-No need to declare types — Python auto-detects it.
-
-name = "Alice"   # String
-age = 20         # Integer
-
-
-💡 Dynamic typing = Python figures out the type for you (unlike C or Java).
-
-🧮 3. Data Types
-Type          Example          Description
-int           10               Whole numbers
-float	      3.14	           Decimal numbers
-str	          "hello"          Text data
-bool	      True / False	   Boolean values
-list	      [1, 2, 3]	       Ordered, changeable
-tuple	      (1, 2, 3)        Ordered, unchangeable
-set	          {1, 2, 3}	       Unordered, unique
-dict	      {"name":"John",  Key-value pairs
-                "age":25}	
-
-
-🖋️ 4. Input and Output
-name = input("Enter your name: ")
-print("Hello,", name)
-
-
-input() always returns a string by default.
-
-⚙️ 5. Operators
-🔹 Arithmetic Operators
-
-+ - * / % // **
-
-Examples:
-
-print(7 / 2)   # 3.5  (normal division)
-print(7 // 2)  # 3    (floor division, removes decimal)
-print(2 ** 3)  # 8    (power operator)
-
-
-✅ ** = Exponent → multiply number by itself.
-
-🔹 Comparison Operators
-
-== != > < >= <=
-Used to compare values — result is always True or False.
-
-🔹 Logical Operators
-
-and, or, not
-
-a = True
-b = False
-print(not a)   # False
-
-
-👉 not flips the truth value — used with booleans only.
-
-🔹 Assignment Operators
-
-=, +=, -=, *=, /=
-
-a = 0
-a += 6   # same as a = a + 6
-
-🔹 Membership Operators
-
-in, not in
-
-nums = [1, 2, 3]
-print(2 in nums)      # True
-print(4 not in nums)  # True
-
-
-Checks if a value exists in a list or not.
-
-🔹 Identity Operators
-
-is, is not
-Used to check if two variables refer to the same object.
-
-a = [1,2,3]
-b = a
-print(a is b)  # True
-
-🧩 6. Conditional Statements
-
-Decision-making in Python:
-
-if condition:
-    # code
-elif another_condition:
-    # code
-else:
-    # code
-
-
-Example:
-
-age = 18
-if age >= 18:
-    print("Adult")
-else:
-    print("Minor")
-
-🔁 7. Loops
-for loop
-for i in range(5):
-    print(i)
-
-Loop Control
-for i in range(1, 6):
-    if i == 2:
-        continue    # Skips 2
-    print(i)
-
-
-➡ Output: 1, 3, 4, 5
-break → stops loop
-continue → skips current turn
-pass → does nothing (placeholder)
-
-🧮 8. Functions
-
-Reusable blocks of code.
-
-def greet(name):
-    return "Hello " + name
-
-print(greet("John"))
-
-Types of Arguments
-
-Positional: order matters
-
-Keyword: use parameter name
-
-Default: has preset value
-
-Variable length: *args, **kwargs
-
-🍎 9. Lists and Tuples
-
-List
-
-fruits = ["apple", "banana", "cherry"]
-fruits.append("mango")
-print(fruits[1])
-
-
-Tuple
-
-colors = ("red", "green", "blue")
-print(colors[0])
-
-
-Tuple can’t be changed — it’s fixed.
-
-🗝️ 10. Dictionary and Set
-student = {"name": "Tom", "age": 20}
-print(student["name"])
-
-student["age"] = 21   # Update value
-
-
-Set example:
-
-nums = {1, 2, 3, 3}
-print(nums)  # {1, 2, 3} (no duplicates)
-
-🧵 11. String Operations
-s = "Hello World"
-print(s.lower())
-print(s.upper())
-print(s[0:5])
-print(len(s))
-print(s.replace("World", "Python"))
-
-
-Python strings = powerful and flexible 🔥
-
-📁 12. File Handling
-
-Write:
-
-f = open("data.txt", "w")
-f.write("Hello Python")
-f.close()
-
-
-Read:
-
-f = open("data.txt", "r")
-print(f.read())
-f.close()
-
-
-"w" → write mode, "r" → read mode.
-
-🚨 13. Exception Handling
-try:
-    num = int(input("Enter number: "))
-    print(10 / num)
-except ZeroDivisionError:
-    print("Cannot divide by zero!")
-except ValueError:
-    print("Invalid input")
-finally:
-    print("Program ended")
-
-
-✅ try = test block
-✅ except = handle error
-✅ finally = always runs
-
-👤 14. Object-Oriented Programming (OOP)
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    def greet(self):
-        print("Hello, my name is", self.name)
-
-p1 = Person("Alice", 25)
-p1.greet()
-
-Concepts
-
-Class → blueprint
-
-Object → instance of a class
-
-Constructor → __init__()
-
-Inheritance → reuse from parent class
-
-Polymorphism → same method, different behavior
-
-Encapsulation → data protection
-
-📦 15. Modules and Packages
-
-Example:
-
-import math
-print(math.sqrt(16))
-
-
-Custom Module
-mymodule.py
-
-def add(a, b):
-    return a + b
-
-
-Then:
-
-import mymodule
-print(mymodule.add(2, 3))
-
-🚀 16. Libraries and Frameworks
-Category	Name	Use
-Numerical	NumPy	Math & arrays
-Data	Pandas	Data analysis
-Visualization	Matplotlib	Charts & graphs
-Web Dev	Flask, Django	Websites
-AI/ML	TensorFlow, PyTorch	Machine learning
-
-
-
-
-Exception                    Triggered When...
-
-ZeroDivisionError	         You try to divide by zero.
-ValueError                   A function gets the right type but wrong value. (int("hi"))
-TypeError                    You mix types that don’t play nice. ("2" + 3)
-NameError                    You reference a variable that doesn’t exist.
-IndexError                   You access an invalid list/tuple index.
-KeyError                     You look for a missing key in a dictionary.
-FileNotFoundError	         You try to open a file that doesn’t exist.
-IOError	General              input/output failure (file, stream issues).
-AttributeError	             You call an attribute/method that an object doesn’t have.
-ImportError	                 A module or object inside a module can’t be imported.
-ModuleNotFoundError	         Specific case of ImportError — the module itself isn’t found.
-RuntimeError	             Generic catch-all for errors that don’t fit others.
-AssertionError	             An assert statement fails.
-MemoryError	                 Python runs out of memory. (Too many elephants 🐘 in RAM.)
-OverflowError                Numeric operation exceeds limits for a float/int.
-IndentationError             Wrong indentation (Python’s biggest pet peeve).
-SyntaxError                  Code is syntactically invalid — won’t even run.
-EOFError                     Input function hits End-Of-File (like input() gets nothing).
-StopIteration	             Raised when an iterator runs out of items.
-
-
-
-
-git hub using first time :
-
-git init 
-git add . 
-git commit -m "first commit"
-git remote add orgin .....
-#add braches
-git push
+🐍 PYTHON BASICS GUIDE 🐍
+
+1️⃣ DATA TYPES & STRUCTURES
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔹 Numbers
+   • int: Whole numbers (e.g., 5, -17, 1000)
+   • float: Decimal numbers (e.g., 3.14, -0.001, 2.0)
+
+🔹 String (str)
+   • Text data in quotes
+   • Example: "Hello", 'Python'
+   • Methods:
+     - upper(): "hello".upper() → "HELLO"
+     - lower(): "HELLO".lower() → "hello"
+     - capitalize(): "hello".capitalize() → "Hello"
+     - count(): "banana".count("a") → 3
+     - replace(): "Hello".replace("H", "h") → "hello"
+     - strip(): "  hello  ".strip() → "hello"
+     - split(): "hello world".split() → ["hello", "world"]
+
+🔹 List
+   • Ordered, mutable collection []
+   • Allows duplicates
+   • Example:
+     fruits = ["apple", "banana", "cherry"]
+     print(fruits[0])  # apple
+     fruits.append("mango")
+
+🔹 Tuple
+   • Ordered, immutable collection ()
+   • Allows duplicates
+   • Example:
+     coordinates = (10, 20, 30)
+     print(coordinates[0])  # 10
+
+🔹 Set
+   • Unordered, unique items {}
+   • No duplicates allowed
+   • Example:
+     numbers = {1, 2, 3, 3}  # {1, 2, 3}
+     numbers.add(4)
+
+🔹 Dictionary (dict)
+   • Key-value pairs {}
+   • Example:
+     student = {
+         "name": "Alice",
+         "age": 20,
+         "grade": "A"
+     }
+     print(student["name"])  # Alice
+
+2️⃣ OPERATORS
+━━━━━━━━━━
+
+🔹 Arithmetic
+   • + (addition)
+   • - (subtraction)
+   • * (multiplication)
+   • / (division)
+   • // (floor division)
+   • % (modulus)
+   • ** (exponent)
+
+🔹 Comparison
+   • == (equal)
+   • != (not equal)
+   • > (greater than)
+   • < (less than)
+   • >= (greater or equal)
+   • <= (less or equal)
+
+🔹 Logical
+   • and
+   • or
+   • not
+
+3️⃣ CONTROL FLOW
+━━━━━━━━━━━━━━
+
+🔹 If Statement
+   if condition:
+       # code
+   elif another_condition:
+       # code
+   else:
+       # code
+
+   Example:
+   age = 18
+   if age >= 18:
+       print("Adult")
+   else:
+       print("Minor")
+
+🔹 Loops
+   • For Loop:
+     for i in range(5):
+         print(i)  # 0,1,2,3,4
+
+   • While Loop:
+     count = 0
+     while count < 5:
+         print(count)
+         count += 1
+
+   • Loop Controls:
+     - break: Exits loop
+     - continue: Skips current iteration
+     - pass: Does nothing (placeholder)
+
+4️⃣ FUNCTIONS
+━━━━━━━━━━━
+
+🔹 Basic Function
+   def greet(name):
+       return f"Hello, {name}!"
+
+   print(greet("Alice"))  # Hello, Alice!
+
+🔹 Function Arguments
+   • Positional: def func(a, b)
+   • Default: def func(a=10)
+   • Keyword: func(name="Alice")
+   • Variable length: def func(*args, **kwargs)
+
+5️⃣ FILE HANDLING
+━━━━━━━━━━━━━━━
+
+🔹 File Operations
+   • Read:
+     with open("file.txt", "r") as f:
+         content = f.read()
+
+   • Write:
+     with open("file.txt", "w") as f:
+         f.write("Hello")
+
+   • Append:
+     with open("file.txt", "a") as f:
+         f.append("World")
+
+6️⃣ ERROR HANDLING
+━━━━━━━━━━━━━━━━
+
+🔹 Try-Except
+   try:
+       result = 10 / 0
+   except ZeroDivisionError:
+       print("Cannot divide by zero")
+   finally:
+       print("Always executes")
+
+🔹 Common Exceptions
+   • ValueError: Invalid value type
+   • TypeError: Invalid operation between types
+   • ZeroDivisionError: Division by zero
+   • FileNotFoundError: File doesn't exist
+   • IndexError: Invalid list index
+   • KeyError: Invalid dictionary key
+   • SyntaxError: Invalid Python syntax
+
+7️⃣ F-STRINGS (FORMATTING)
+━━━━━━━━━━━━━━━━━━━━━━━
+
+🔹 Examples
+   name = "Alice"
+   age = 25
+   print(f"Name: {name}, Age: {age}")
+   
+   x = 10
+   y = 20
+   print(f"{x} + {y} = {x + y}")
+
+8️⃣ BEST PRACTICES
+━━━━━━━━━━━━━━━━
+
+🔹 Naming Conventions
+   • Variables: lowercase_with_underscores
+   • Constants: UPPERCASE_WITH_UNDERSCORES
+   • Classes: CapitalizedWords
+   • Functions: lowercase_with_underscores()
+
+🔹 Code Style
+   • Use 4 spaces for indentation
+   • Keep lines under 79 characters
+   • Add comments for complex logic
+   • Use meaningful variable names
+   • Follow PEP 8 guidelines
+
+9️⃣ HELPFUL SHORTCUTS
+━━━━━━━━━━━━━━━━━━
+
+🔹 VS Code
+   • Ctrl + /: Comment/uncomment
+   • Ctrl + Z: Undo
+   • Ctrl + S: Save file
+   • F5: Run Python file
+   • Shift + Enter: Run selected code
+
+🔹 Git Commands
+   • git init: Initialize repository
+   • git add .: Stage all changes
+   • git commit -m "message": Commit changes
+   • git push: Upload to remote
+   • git pull: Download from remote
