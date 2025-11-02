@@ -345,8 +345,6 @@ Python works almost everywhere:
 
 Android
 
-iOS
-
 Windows
 
 macOS
@@ -359,7 +357,6 @@ That’s why it’s called portable.
 💡 Compare with Other Languages
 Platform	Common Languages
 Android	Java, Kotlin
-iOS	Swift
 Windows	C++, C, Python, Java
 
 Python joins this lineup because it’s flexible — it can blend into almost any environment.
