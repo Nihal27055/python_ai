@@ -1,5 +1,6 @@
-f = open("ex.txt", "a+")#permission
+f = open("ex.txt", "a+")
 f.write("\nHello Python")
-f.seek(0)#restart
+f.seek(0)
 print(f.read())
 f.close()
+
