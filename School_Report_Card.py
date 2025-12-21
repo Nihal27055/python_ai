@@ -1,22 +1,45 @@
 class Student :
-    def __init__(self,Name,Number,Class,English,Maths,Science,Malayalam,History,Total_Marks):
+    def __init__(self,Name,Roll_Num,Class,Mark):
         self.Name = Name 
-        self.Number = Number
+        self.Roll_Num = Roll_Num
         self.Class = Class
-        self.English = English
-        self.Maths = Maths
-        self.Science = Science
-        self.Malayalam = Malayalam
-        self.History = History
-        self.Total_Marks = Total_Marks
-    def subject(self,average):
-        English = self.English
-        Maths = self.Maths
-        Science = self.Science
-        Malayalam = self.Malayalam
-        average = self.English + self.Maths + self.Science + self.Malayalam / 5
-        return average()
-average = 0
-Nihal = Student("Nihal",12,7,56,68,68,75,65,average)    
+        self.Mark = Mark
+    def Report_Card(self):
+        print(f"Name Of the Student : {self.Name}")    
+        print(f"Roll_Number         : {self.Roll_Num}")   
+        print(f"Class               : {self.Class}")   
+        print(f"Grade               : {self.Mark}")   
 
-Nihal.subject(0)
+def average(English,Science,Malayalam,History):
+    average = (English + Science + Malayalam + History )/ 4 
+    return average
+
+def calculate_grade(avg):
+    if avg >= 90:
+        return "A"
+    elif avg >= 75:
+        return "B"
+    elif avg >= 60:
+        return "C"
+    else:
+        return "D"
+
+nihal = Student("NIHAL",12,7,84)
+user_roll = int(input("Enter Student Roll Number : "))
+if user_roll == nihal.Roll_Num :
+    nihal_Eng = int(input(f"Enter {nihal.Name} Mark In English Subject : "))
+    nihal_Sci = int(input(f"Enter {nihal.Name} Mark In Science Subject : "))
+    nihal_Mala = int(input(f"Enter {nihal.Name} Mark In Malayalayam Subject : "))
+    nihal_Hist = int(input(f"Enter {nihal.Name} Mark In History Subject : "))
+else : 
+    print("Roll number not exisist in the records ")
+English = nihal_Eng
+Science = nihal_Sci
+Malayalam = nihal_Mala
+History = nihal_Hist
+
+avg = average(English, Science, Malayalam, History)
+nihal.Mark = calculate_grade(avg)
+
+
+nihal.Report_Card()
