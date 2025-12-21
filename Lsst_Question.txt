@@ -1,0 +1,69 @@
+⏳ Time Limit: 5–7 Days
+
+Project Title:
+School Report Card Management System
+
+Objective:
+Create a Python program using Object-Oriented Programming (OOP) to manage student details, store marks, calculate results, and display report cards.
+
+Project Requirements:
+
+1( Use of OOP (Mandatory)
+The program must use classes and objects.
+You must create at least two classes.
+
+Class 1: Student
+This class represents one student.
+
+Attributes:
+- Student Name
+- Roll Number
+- Class / Grade
+- Marks (for multiple subjects)
+
+Methods:
+- Add marks for a subject
+- Calculate average marks
+- Calculate final grade (A, B, C, D)
+- Display student report card
+)
+Class 2: School
+This class manages many students.
+
+Responsibilities:
+- Store multiple student objects
+- Add a new student
+- Search for a student using roll number
+- Display report cards of all students
+
+2) Menu-Driven Program
+The program should display the following menu:
+
+1. Add New Student
+2. Add Marks to Student
+3. View Student Report Card
+4. View All Students
+5. Exit
+
+The user should select options using numbers.
+
+3) Grade Calculation Rules
+
+Average Marks and Grade:
+- 90 and above : A
+- 75 to 89     : B
+- 60 to 74     : C
+- Below 60     : D
+
+4) Program Rules
+- Use proper class methods
+- Use meaningful variable names
+- Display output neatly
+- Program should not crash for wrong input
+- Follow basic Python coding style
+
+Optional – Extra Marks:
+- Save student data to a file
+- Load data from file when program starts
+- Add rank calculation
+- Add teacher password before accessing menu
