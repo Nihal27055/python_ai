@@ -1,18 +1,23 @@
-class Student :
-    def __init__(self,Name,Roll_Num,Class,Mark):
-        self.Name = Name 
+class Student:
+    def __init__(self, Name, Roll_Num, Class):
+        self.Name = Name
         self.Roll_Num = Roll_Num
         self.Class = Class
-        self.Mark = Mark
-    def Report_Card(self):
-        print(f"Name Of the Student : {self.Name}")    
-        print(f"Roll_Number         : {self.Roll_Num}")   
-        print(f"Class               : {self.Class}")   
-        print(f"Grade               : {self.Mark}")   
+        self.subject = {}     
+        self.Mark = None       
 
-def average(English,Science,Malayalam,History):
-    average = (English + Science + Malayalam + History )/ 4 
-    return average
+    def Report_Card(self):
+        print(" Report Card ")
+        print(f"Name        : {self.Name}")
+        print(f"Roll Number : {self.Roll_Num}")
+        print(f"Class       : {self.Class}")
+        print(f"Marks       : {self.subject}")
+        print(f"Grade       : {self.Mark}")
+
+
+def average(English, Science, Malayalam, History):
+    return (English + Science + Malayalam + History) / 4
+
 
 def calculate_grade(avg):
     if avg >= 90:
@@ -24,22 +29,79 @@ def calculate_grade(avg):
     else:
         return "D"
 
-nihal = Student("NIHAL",12,7,84)
-user_roll = int(input("Enter Student Roll Number : "))
-if user_roll == nihal.Roll_Num :
-    nihal_Eng = int(input(f"Enter {nihal.Name} Mark In English Subject : "))
-    nihal_Sci = int(input(f"Enter {nihal.Name} Mark In Science Subject : "))
-    nihal_Mala = int(input(f"Enter {nihal.Name} Mark In Malayalayam Subject : "))
-    nihal_Hist = int(input(f"Enter {nihal.Name} Mark In History Subject : "))
-else : 
-    print("Roll number not exisist in the records ")
-English = nihal_Eng
-Science = nihal_Sci
-Malayalam = nihal_Mala
-History = nihal_Hist
 
-avg = average(English, Science, Malayalam, History)
-nihal.Mark = calculate_grade(avg)
+def add_marks(student):
+    student.subject["English"] = int(input("English : "))
+    student.subject["Science"] = int(input("Science : "))
+    student.subject["Malayalam"] = int(input("Malayalam : "))
+    student.subject["History"] = int(input("History : "))
 
+    avg = average(
+        student.subject["English"],
+        student.subject["Science"],
+        student.subject["Malayalam"],
+        student.subject["History"]
+    )
+    student.Mark = calculate_grade(avg)
 
-nihal.Report_Card()
+class School:
+    def __init__(self):
+        self.students = []
+
+    def add_student(self,student):
+        self.students.append(student)
+
+    def find_student(self, roll):
+        for i in self.students:
+            if i.Roll_Num == roll:
+                return i
+
+    def view_all_students(self):
+        for i in self.students:
+            i.Report_Card()
+
+school = School()
+
+while True:
+    print("1. Add New Student")
+    print("2. Add Marks to Student")
+    print("3. View Student Report Card")
+    print("4. View All Students")
+    print("5. Exit")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == "1":
+        name = input("Name: ")
+        roll = int(input("Roll Number: "))
+        cls = input("Class: ")
+        student = Student(name, roll, cls)
+        school.add_student(student)
+        print("Student added.")
+
+    elif choice == "2":
+        roll = int(input("Enter Roll Number: "))
+        student = school.find_student(roll)
+        if student:
+            add_marks(student)
+            print("Marks Added to the Student.")
+        else:
+            print("Student not found.")
+
+    elif choice == "3":
+        roll = int(input("Enter Roll Number: "))
+        student = school.find_student(roll)
+        if student:
+            student.Report_Card()
+        else:
+            print("Student not found.")
+
+    elif choice == "4":
+        school.view_all_students()
+
+    elif choice == "5":
+        print("Exiting program.")
+        break
+
+    else:
+        print("Invalid choice.")
