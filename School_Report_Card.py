@@ -12,7 +12,7 @@ class Student:
         print(f"Roll Number : {self.Roll_Num}")
         print(f"Class       : {self.Class}")
         print(f"Marks       : {self.subject}")
-        print(f"Grade       : {self.Mark}")
+        print(f"Grade       : {self.Mark}")\
 
 
 def average(English, Science, Malayalam, History):
