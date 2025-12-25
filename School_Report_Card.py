@@ -31,10 +31,13 @@ def calculate_grade(avg):
 
 
 def add_marks(student):
-    student.subject["English"] = int(input("English : "))
-    student.subject["Science"] = int(input("Science : "))
-    student.subject["Malayalam"] = int(input("Malayalam : "))
-    student.subject["History"] = int(input("History : "))
+    try :
+        student.subject["English"] = int(input("English : "))
+        student.subject["Science"] = int(input("Science : "))
+        student.subject["Malayalam"] = int(input("Malayalam : "))
+        student.subject["History"] = int(input("History : "))
+    except ValueError  :
+        print("Type Only Numbers.")    
 
     avg = average(
         student.subject["English"],
@@ -61,47 +64,78 @@ class School:
             i.Report_Card()
 
 school = School()
-
+teacher_pass = 4321
 while True:
+    print(""" -------WARNING YOUR MISTAKE WILL BE REST ALL REPORT_CARDS , BE CAREFULL-------- """)
     print("1. Add New Student")
     print("2. Add Marks to Student")
     print("3. View Student Report Card")
     print("4. View All Students")
     print("5. Exit")
+    try :
+        choice = int(input("Enter choice: "))
+    except ValueError  :
+        print("Choose Only Numbers.")
+        break
+    if choice == 1:
+        try :
+            teacher  = int(input("Enter teacher password : "))
+        except ValueError  :
+            print("Choose Numbers")
+            break
+        if teacher == teacher_pass :
+            print("Your password is correct ")
+            name = str(input("Student Name: "))
+            try:    
+                roll = int(input("Roll Number: "))
+                cls = int(input("Class: "))
+                student = Student(name, roll, cls)
+                school.add_student(student)
+            except ValueError  :
+                print("Choose numbers only.")  
+                break  
+            print("Student added.")
+        else : 
+            print("Invalid Password Try again")    
 
-    choice = int(input("Enter choice: "))
+    elif choice == 2:
+        try :
+            teacher  = int(input("Enter teacher password : "))
+        except ValueError  :
+                print("Choose numbers only.") 
+                break       
+        if teacher == teacher_pass :
+            print("Your password is correct")
+            try:
+                roll = int(input("Enter Roll Number: "))
+            except ValueError  :
+                print("Choose numbers only.")      
+                break  
+            student = school.find_student(roll)
+            if student:
+                add_marks(student)
+                print("Marks Added to the Student.")
+            else:
+                print("Student not found.")
 
-    if choice == "1":
-        name = input("Name: ")
-        roll = int(input("Roll Number: "))
-        cls = input("Class: ")
-        student = Student(name, roll, cls)
-        school.add_student(student)
-        print("Student added.")
-
-    elif choice == "2":
-        roll = int(input("Enter Roll Number: "))
-        student = school.find_student(roll)
-        if student:
-            add_marks(student)
-            print("Marks Added to the Student.")
-        else:
-            print("Student not found.")
-
-    elif choice == "3":
-        roll = int(input("Enter Roll Number: "))
+    elif choice == 3:
+        try :
+            roll = int(input("Enter Roll Number: "))
+        except ValueError  :
+                print("Choose numbers only.")     
+                break   
         student = school.find_student(roll)
         if student:
             student.Report_Card()
         else:
             print("Student not found.")
 
-    elif choice == "4":
+    elif choice == 4:
         school.view_all_students()
 
-    elif choice == "5":
+    elif choice == 5:
         print("Exiting program.")
         break
 
     else:
-        print("Invalid choice.")
+        print("The Number You Called is Currently Not Awailable .")
